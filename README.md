@@ -1,1 +1,1 @@
-# DBMS-II
+# DBMS-II Labs
