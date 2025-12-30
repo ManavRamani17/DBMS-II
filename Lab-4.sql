@@ -129,7 +129,24 @@
 	SELECT DBO.FN_CHECK_ENROLLMENT_YEAR(2094)
 
 --9. Write a table-valued function that returns details of students whose names start with a given letter.
+	CREATE OR ALTER FUNCTION FN_STUDETAILS(@FIRSTCHAR VARCHAR(1))
+	RETURNS TABLE
+	AS
+	RETURN
+		SELECT * FROM STUDENT 
+		WHERE STUNAME LIKE @FIRSTCHAR+'%'
+	
+	SELECT * FROM FN_STUDETAILS('R')
+
 --10. Write a table-valued function that returns unique department names from the STUDENT table.
+	CREATE OR ALTER FUNCTION FN_UNIQUE_DEPT()
+	RETURNS TABLE
+	AS
+	RETURN
+		SELECT DISTINCT STUDEPARTMENT
+		FROM STUDENT
+
+	SELECT * FROM FN_UNIQUE_DEPT()
 
 --Part-B
 --11. Write a scalar function that calculates age in years given a DateOfBirth.
@@ -182,7 +199,21 @@
 
 	SELECT DBO.FN_SUM_CREDITS ('CSE')
 
+
 --14. Write a table-valued function that returns all courses taught by faculty with a specific designation.
+	CREATE OR ALTER FUNCTION FN_FACULTY_DATA(@FACULTYDESIGNATION VARCHAR(20))
+	RETURNS TABLE
+	AS
+	RETURN
+	
+		SELECT DISTINCT C.COURSENAME ,F.FACULTYNAME,F.FacultyDesignation
+		FROM COURSE_ASSIGNMENT CA JOIN FACUILTY F
+		ON CA.FacultyID = F.FacultyID
+		JOIN COURSE C
+		ON CA.CourseID = C.CourseID
+		WHERE FacultyDesignation = @FACULTYDESIGNATION
+
+	SELECT * FROM FN_FACULTY_DATA('Associate Prof')
 
 --Part - C
 --15. Write a scalar function that accepts StudentID and returns their total enrolled credits (sum of credits from all active enrollments).
@@ -213,5 +244,6 @@
 	GO
 
 	SELECT DBO.FN_COUNT_FACULTY('2014-07-15','2020-08-20')
+
 
 
