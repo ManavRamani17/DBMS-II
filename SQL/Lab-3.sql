@@ -1,4 +1,4 @@
---Part – A
+--Part â€“ A
 --1. Create a stored procedure that accepts a date and returns all faculty members who joined on that date.
 	CREATE OR ALTER PROCEDURE PR_FACULTY_JOININGDATE
 	@DATE DATE
@@ -16,7 +16,7 @@
 	@STUID INT
 	AS
 	BEGIN
-	SELECT StudentID, CourseID, EnrollmentDate ,Grade ,EnrollmentStatus
+	SELECT *
 	FROM ENROLLMENT
 	WHERE STUDENTID = @STUID
 	END
@@ -78,7 +78,7 @@
 
 	EXEC PR_FACULTYDETAILS  4,2024
 
---Part – B
+--Part â€“ B
 --7. Create a stored procedure that accepts the first letter of Status ('A', 'C', 'D') and returns enrollment details.
 	CREATE OR ALTER PROCEDURE PR_ENROLLSTATUS_DATA
 	@FIRST_LETTER VARCHAR(2)
@@ -117,7 +117,7 @@
 
 	EXEC PR_STU_DETAILS  'CS101'
 
---Part – C
+--Part â€“ C
 --10. Create a stored procedure that accepts a year as input and returns all courses assigned to faculty in that year with classroom details.
 	CREATE OR ALTER PROCEDURE PR_FACULTY_COURSE_ASSIGNMENT
 	@YEAR INT
