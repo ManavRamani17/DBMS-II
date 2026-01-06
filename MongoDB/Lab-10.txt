@@ -104,6 +104,8 @@ Part – C:
    db.Student.find().skip(3).limit(2)
 
 5. Display the name of oldest student from "Student" collection.
+   db.Student.find().sort({age:1}).limit(1)
 
 6. Display all documents of "Student" collection in such a way that skip the first 2 documents and return the rest documents.
+   db.Student.find().skip(2)
 
