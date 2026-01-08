@@ -59,7 +59,7 @@ VALUES
 ('CS202',107,4,2024,'A-305'),
 ('CS302',101,6,2024,'B-401');
 
---Part – A 
+--Part â€“ A 
 
 --1.Retrieve all unique departments from the STUDENT table.
 	  SELECT DISTINCT STUDEPARTMENT FROM STUDENT;
@@ -150,7 +150,7 @@ VALUES
 
 	SELECT * FROM Active_Enrollments;
 
---18.Retrieve the student’s name who is not enrol in any course using subquery. (STUDENT, ENROLLMENT TABLE)
+--18.Retrieve the studentâ€™s name who is not enrol in any course using subquery. (STUDENT, ENROLLMENT TABLE)
 	
 	SELECT StuName
 	FROM STUDENT
@@ -179,7 +179,7 @@ VALUES
 	                      FROM COURSE ORDER BY CourseCredits DESC)
 	ORDER BY COURSECREDITS DESC;
 
---Part – B 
+--Part â€“ B 
 	
 --20.	Retrieve all courses along with the total number of students enrolled. (COURSE, ENROLLMENT table)
 	SELECT COUNT(STUDENTID) AS TOTAL_STUDENT,COURSE.CourseName
@@ -201,7 +201,7 @@ VALUES
 	ON COURSE_ASSIGNMENT.CourseID = COURSE.CourseID
 	WHERE FACUILTY.FacultyName = 'DR. SHETH';
 
---Part – C 
+--Part â€“ C 
 
 --23.	List all students who are enrolled in more than 3 courses. (STUDENT, ENROLLMENT table)
 	SELECT STUDENT.STUNAME ,COUNT (ENROLLMENT.COURSEID) AS NO_OF_COURSES
@@ -232,5 +232,6 @@ VALUES
 	AVG(DATEDIFF(YEAR, FacultyJoiningDate, GETDATE())) AS AvgExperienceYears
 	FROM FACUILTY
 	GROUP BY FacultyDepartment;
+
 
 
