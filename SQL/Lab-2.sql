@@ -34,7 +34,7 @@ SELECT * FROM COURSE
 	            VALUES(@CourseID,@CourseName,@CourseCredits,@CourseDepartment,@CourseSemester)
 	END
 	EXEC PR_INSERT_COURSE 'CS330', 'Computer Networks', 4 ,'CSE', 5
-	EXEC PR_INSERT_COURSE 'EC120', 'Electronic Circuits','3','ECE',2
+	EXEC PR_INSERT_COURSE 'EC120', 'Electronic Circuits',3,'ECE',2
 
 --3. UPDATE Procedures: Create stored procedure SP_UPDATE_STUDENT to update Email and Phone inSTUDENT table. (Update using studentID)
 	CREATE OR ALTER PROCEDURE PR_UPDATE_STUDENT
@@ -86,7 +86,7 @@ SELECT * FROM COURSE
 
 	EXEC PR_DISPLAY_FIRST_FIVE @TOPN=5
 
---Part – B
+--Part â€“ B
 --7. Create a stored procedure which displays faculty designation-wise count.
 	CREATE OR ALTER PROCEDURE PR_FACULTY_COUNT
 	AS
@@ -112,7 +112,7 @@ SELECT * FROM COURSE
 	EXEC PR_DEPTWISE_STUDENT 'CSE'
 
 
---Part – C
+--Part â€“ C
 
 --9. Create a stored procedure which displays department-wise maximum, minimum, and average credits of courses.
 	CREATE OR ALTER PROCEDURE PR_DEPTWISE_CREDITS
@@ -142,3 +142,4 @@ SELECT * FROM COURSE
 
 
 	EXEC PR_STUDENT_COURSES_GRADE 1
+
