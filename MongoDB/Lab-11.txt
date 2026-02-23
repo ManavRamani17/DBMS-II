@@ -99,9 +99,9 @@ Part-A:
 
 db.createCollection("Employee",{capped:true ,size:500 ,max:3})
 db.Employee.insertMany([{Ecode: 1, Ename: "John"},
-                        {Ecode: 2, Ename: "Jane",  age: 25,cit: "Los Angeles"},
+                        {Ecode: 2, Ename: "Jane",  age: 25,city: "Los Angeles"},
                         {Ecode: 3, Ename: "Tom",   age: 35},
-                        {Ecode: 4, Ename: "Lucy",  age: 28,cit: "San Francisco", isActive: true},
+                        {Ecode: 4, Ename: "Lucy",  age: 28,city: "San Francisco", isActive: true},
                         {Ename: "Dino"}])
 db.Employee.find()
 
@@ -228,5 +228,6 @@ db.logs.insertMany([{ message: "New log entry 1", level: "info", timestamp: new 
                     { message: "New log entry 4", level: "warning", timestamp: new Date() },
                     { message: "New log entry 5", level: "error", timestamp: new Date() }])
 db.logs.find()
+
 
 
